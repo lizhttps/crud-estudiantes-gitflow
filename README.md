@@ -1,6 +1,6 @@
 # CRUD Estudiantes - Git Flow
 
-Proyecto CRUD de la Tarea 3 de Programación III (Profesor: Kelyn Tejada).
+Proyecto CRUD de la Tarea 3 de Programación III
 Sistema de gestión de estudiantes con ASP.NET Core MVC y SQLite.
 
 ## Tecnologías
