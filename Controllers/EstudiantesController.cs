@@ -53,5 +53,46 @@ namespace CrudEstudiantes.Controllers
             }
             return View(estudiante);
         }
+
+        // GET: Estudiantes/Edit/5
+public async Task<IActionResult> Edit(int? id)
+{
+    if (id == null)
+        return NotFound();
+
+    var estudiante = await _context.Estudiantes.FindAsync(id);
+    if (estudiante == null)
+        return NotFound();
+
+    return View(estudiante);
+}
+
+// POST: Estudiantes/Edit/5
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id,
+    [Bind("Id,Nombre,Apellido,Email,Matricula,FechaRegistro")] Estudiante estudiante)
+{
+    if (id != estudiante.Id)
+        return NotFound();
+
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            _context.Update(estudiante);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!_context.Estudiantes.Any(e => e.Id == id))
+                return NotFound();
+            else
+                throw;
+        }
+        return RedirectToAction(nameof(Index));
+    }
+    return View(estudiante);
+      }
     }
 }
