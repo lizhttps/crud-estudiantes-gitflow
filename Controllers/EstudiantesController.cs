@@ -94,5 +94,32 @@ public async Task<IActionResult> Edit(int id,
     }
     return View(estudiante);
       }
+
+      // GET: Estudiantes/Delete/5
+public async Task<IActionResult> Delete(int? id)
+{
+    if (id == null)
+        return NotFound();
+
+    var estudiante = await _context.Estudiantes.FirstOrDefaultAsync(m => m.Id == id);
+    if (estudiante == null)
+        return NotFound();
+
+    return View(estudiante);
+}
+
+// POST: Estudiantes/Delete/5
+[HttpPost, ActionName("Delete")]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> DeleteConfirmed(int id)
+{
+    var estudiante = await _context.Estudiantes.FindAsync(id);
+    if (estudiante != null)
+    {
+        _context.Estudiantes.Remove(estudiante);
+        await _context.SaveChangesAsync();
+    }
+    return RedirectToAction(nameof(Index));
+}
     }
 }
