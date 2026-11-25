@@ -1,8 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero text-center">
+    <h1 class="display-5">Gestión de Estudiantes</h1>
+    <p class="lead mb-4">
+        Registra, consulta, edita y elimina estudiantes de forma sencilla.
+    </p>
+    <a asp-controller="Estudiantes" asp-action="Index" class="btn btn-primary btn-lg">
+        Ver estudiantes
+    </a>
 </div>

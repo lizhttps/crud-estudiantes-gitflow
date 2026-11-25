@@ -29,3 +29,74 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* ===== Estilos personalizados ===== */
+body {
+  background-color: #f4f6fb;
+}
+
+/* Barra de navegación */
+.navbar {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+  color: #dbeafe;
+}
+
+/* Títulos */
+h1 {
+  color: #1e3a8a;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* Tabla */
+.table {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.table thead.table-dark th {
+  background-color: #1e3a8a;
+  border: none;
+}
+
+/* Botones */
+.btn {
+  border-radius: 8px;
+}
+
+/* Tarjetas (detalles y eliminar) */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formularios */
+.form-control {
+  border-radius: 8px;
+}
+
+/* Página de inicio */
+.hero {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  padding: 1rem 0;
+}
