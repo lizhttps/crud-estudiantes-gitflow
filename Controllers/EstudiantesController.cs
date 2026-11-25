@@ -33,5 +33,25 @@ namespace CrudEstudiantes.Controllers
 
             return View(estudiante);
         }
+
+                // GET: Estudiantes/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Estudiantes/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Nombre,Apellido,Email,Matricula,FechaRegistro")] Estudiante estudiante)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(estudiante);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(estudiante);
+        }
     }
 }
